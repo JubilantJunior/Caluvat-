@@ -1,0 +1,49 @@
+class Furniture:
+    def __init__(self, name, material, price):
+        self.name = name
+        self.material = material
+        self.price = price
+
+    def display_info(self):
+        print(f"Name: {self.name}")
+        print(f"Material: {self.material}")
+        print(f"Price: ${self.price}")
+
+class Chair(Furniture):
+    def __init__(self, name, material, price, has_arms):
+        super().__init__(name, material, price)
+        self.has_arms = has_arms
+
+    def display_info(self):
+        super().display_info()
+        print(f"Has Arms: {'Yes' if self.has_arms else 'No'}")
+
+class Table(Furniture):
+    def __init__(self, name, material, price, shape):
+        super().__init__(name, material, price)
+        self.shape = shape
+
+    def display_info(self):
+        super().display_info()
+        print(f"Shape: {self.shape}")
+
+class Sofa(Furniture):
+    def __init__(self, name, material, price, num_seats):
+        super().__init__(name, material, price)
+        self.num_seats = num_seats
+
+    def display_info(self):
+        super().display_info()
+        print(f"Number of Seats: {self.num_seats}")
+
+# Example usage
+if __name__ == "__main__":
+    chair = Chair("Office Chair", "Leather", 120, True)
+    table = Table("Dining Table", "Wood", 300, "Rectangle")
+    sofa = Sofa("Living Room Sofa", "Fabric", 500, 3)
+
+    chair.display_info()
+    print()
+    table.display_info()
+    print()
+    sofa.display_info()
